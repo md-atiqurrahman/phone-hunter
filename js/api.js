@@ -66,7 +66,9 @@ const loadPhoneDetails = phoneId =>{
 
 //show the phone details
 const displayPhoneDetails = phone =>{
+    console.log(phone)
     const phoneDetailsContainer = document.getElementById('phone-details');
+    //clear the previous details
     phoneDetailsContainer.textContent = '';
     
     const div = document.createElement('div');

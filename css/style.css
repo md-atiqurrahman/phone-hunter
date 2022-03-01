@@ -1,11 +1,11 @@
 /* media queries */
-@media (min-width: 280px) and (max-width: 768px){
+@media (min-width: 279px) and (max-width: 768px){
     .input-size-sm{
         width: 90%;
     }
-};
+}
 @media (min-width: 769px){
     .input-size-lg{
         width: 25%;
     }
-};
+}
