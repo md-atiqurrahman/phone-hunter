@@ -3,13 +3,9 @@
     .input-size-sm{
         width: 90%;
     }
-}
+};
 @media (min-width: 769px){
     .input-size-lg{
         width: 25%;
     }
-}
-/* no-results class style */
-/* .no-results{
-    display: none;
-} */
+};

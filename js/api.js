@@ -23,7 +23,7 @@ const checkValue = array =>{
         phoneDetailsContainer.textContent = '';
     }
     else{
-        displayPhone(array);
+        displayPhone(array.slice(0,20));
     }
 };
 //show the results
@@ -68,7 +68,7 @@ const loadPhoneDetails = phoneId =>{
 const displayPhoneDetails = phone =>{
     const phoneDetailsContainer = document.getElementById('phone-details');
     phoneDetailsContainer.textContent = '';
-    // console.log(phone);
+    
     const div = document.createElement('div');
     div.innerHTML =`
     <div class="text-center">
@@ -77,12 +77,24 @@ const displayPhoneDetails = phone =>{
         <p>Realese date: ${phone.releaseDate ? phone.releaseDate: 'no release date found'}</p>
         <h5>Brand: ${phone.brand}</h4>
         <div>
-            <h6 class="text-center">Main features</h6>
+            <h5 class="text-center">Main features</h5>
            <div>
                <p>Chipset: ${phone.mainFeatures.chipSet}</p>
                <p>Display size: ${phone.mainFeatures.displaySize}</p>
                <p>Memory: ${phone.mainFeatures.memory}</p>
                <p>Storage: ${phone.mainFeatures.storage}</p>
+               <p>Sensors: ${phone.mainFeatures.sensors}</p>
+           </div>
+       </div>
+       <div>
+            <h5 class="text-center">Others features</h5>
+           <div>
+               <p>Bluetooth: ${phone?.others?.Bluetooth ? phone.others.Bluetooth: 'No'}</p>
+               <p>GPS: ${phone?.others?.GPS ? phone.others.GPS: 'No'}</p>
+               <p>NFC: ${phone?.others?.NFC ? phone.others.NFC: 'No'}</p>
+               <p>Radio: ${phone?.others?.Radio ? phone.others.Radio: 'No'}</p>
+               <p>USB: ${phone?.others?.USB ? phone.others.USB: 'NO'}</p>
+               <p>WLAN: ${phone?.others?.WLAN ? phone.others.WLAN: 'No'}</p>
            </div>
        </div>
     </div>
