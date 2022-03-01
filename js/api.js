@@ -8,10 +8,29 @@ const loadPhoneData = () =>{
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
     .then(res => res.json())
-    .then(data => displayPhone(data.data));
+    .then(data => checkValue(data.data));
 }
+const checkValue = array =>{
+    if(array.length === 0){
+        const noResults = document.getElementById('no-results');
+        noResults.classList.remove('d-none');
+
+        const phoneContainer = document.getElementById('phone-container');
+        //clear the previous result
+        phoneContainer.textContent = '';
+        //clear the previous details
+        const phoneDetailsContainer = document.getElementById('phone-details');
+        phoneDetailsContainer.textContent = '';
+    }
+    else{
+        displayPhone(array);
+    }
+};
 //show the results
 const displayPhone = phones =>{
+    const noResults = document.getElementById('no-results');
+    noResults.classList.add('d-none');
+
     const phoneContainer = document.getElementById('phone-container');
     //clear the previous result
     phoneContainer.textContent = '';
